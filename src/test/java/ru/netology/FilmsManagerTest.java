@@ -60,4 +60,28 @@ public class FilmsManagerTest {
 
         assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void shouldFindLastElevenFilms() {
+        FilmsManager manager = new FilmsManager(11);
+
+        manager.add("First");
+        manager.add("Second");
+        manager.add("Third");
+        manager.add("Fourth");
+        manager.add("Fifth");
+        manager.add("Sixth");
+        manager.add("Seventh");
+        manager.add("Eighth");
+        manager.add("Ninth");
+        manager.add("Tenth");
+
+        String[] expected = {"Tenth", "Ninth", "Eighth", "Seventh", "Sixth", "Fifth", "Fourth", "Third", "Second", "First"
+};
+        String[] actual = manager.findLast();
+
+        assertArrayEquals(expected, actual);
+    }
+
+
 }
